@@ -1,0 +1,73 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+#puzzle-board {
+    width: 300px;  /* 拼图区域总宽度 */
+    height: 300px; /* 拼图区域总高度 */
+    border: 2px solid #333;
+    margin: 20px auto;
+    display: grid;
+    /* 创建一个 3x3 的网格 */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    position: relative;
+    background-color: #ddd; /* 空白块的颜色 */
+}
+
+.puzzle-piece {
+    width: 100px; /* 每个拼图块的宽度 (总宽 / 3) */
+    height: 100px; /* 每个拼图块的高度 (总高 / 3) */
+    background-image: url('image.jpg'); /* 你的图片文件名 */
+    background-size: 300px 300px; /* 背景图大小应等于拼图区域总大小 */
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    transition: transform 0.2s ease-in-out; /* 添加平滑移动动画 */
+    /* 绝对定位，通过 JS 控制 top 和 left */
+    position: absolute; 
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#message {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #d9534f;
+    height: 20px;
+}
