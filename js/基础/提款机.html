@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let total = 0;
+    while(1){
+      let tmp = +prompt(`
+        1.取钱
+        2.存钱
+        3.查看余额
+        4.退出
+      `);
+      if(tmp === 1){
+        let need = +prompt(`请输入取钱余额:`);
+        while (need > total) {
+          need = +prompt(`cnm 没钱 请重新输入取钱余额:`);
+        }
+        total -= need;
+      }
+      else if(tmp === 2){
+        let add = +prompt(`请输入存入余额:`);
+        total += add;
+      }
+      else if(tmp === 3){
+        alert(`一共${total}元`);
+      }
+      else {
+        break;
+      }
+    }
+  </script>
+</body>
+</html>
